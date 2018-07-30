@@ -1,9 +1,9 @@
 .pageall{
 	background-color: #2a83d3;
-	height: 80px;
+	 
 }
-.pageall .container .row .col-md{
-	 padding-left: 0
+.pageall .container .row .col-md:hover{
+	background-color:#348fe0;
 }
 .pageall a{
 	color: inherit;
@@ -13,113 +13,119 @@
 	color: #ffffff;
 	font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 	font-size: 18px;
+	text-align:center;
+	margin-top:16px;
 }
-
-
-.bigtab{
+.pageall .currentpage{
+	
+}
+.downlink{
 	margin-top: 30px;
 }
-.bigtab .container .row .col-md-10{
-	padding: 0
+.downlink .col-md-10{
+	border: 1px solid #dee2e6;
 }
-/* Style the tab */
-.bigtab .tab {
-    overflow: hidden;
-    border: 1px solid #dee2e6;
-    background-color: #ffffff;
+.downlink .now{
+	background-color: #2a83d3
 }
-.bigtab .tab .col-md{
-	 padding: 0
+.downlink .now a p{
+	color: white;
+	text-align: center;
 }
-/* Style the buttons inside the tab */
-.bigtab .tab button {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 22px;
-    font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-    width: 100%
+.downlink a{
+	color: #999999;
+	text-decoration:none
 }
-
-/* Change background color of buttons on hover */
-.bigtab .tab button:hover {
-    background-color: #ddd;
+.downlink a p{
+	margin-top:16px;
+	text-align: center;
+ 	font-size: 22px;
+ 	font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+ 	font-color:#666666;
 }
-
-/* Create an active/current tablink class */
-.bigtab .tab button.active {
-    background-color: #2a83d3;
-}
-
-/* Style the tab content */
-.bigtabcontent {
-    display: none;
-    padding: 6px 12px;
-     
-    border-top: none;
-}
-
 
 .banner .container .row .col-md-10{
 	margin-top: 30px;
 	padding-left: 0;
 	padding-right: 0
 }
+.banner .slide .carousel-indicators li {
+	list-style: disc  !important;
+}
 .banner .carousel-inner img {
       width: 100%;
-      height: 100%;
+      height: 350px;
   }
+.banner .carousel-item .carousel-caption{
+	font-size: 18px;
+}
+
 
 .issue{
-	 margin-top:30px;	 
+	margin-top: 30px;
 }
-.issue .col-md-12{
-	padding-left: 0
+.issue .i{
+	margin-bottom: 20px;
 }
-.issue .container .row .col-md-2{ 
-	padding-left:0px;
-	padding-right: 0px;
-}
-
- 
-.it{
+.issue .it{
 	padding-left: 0;
-	padding-right: 20px;
-	 
+	padding-right: 20px; 
 }
-.item{
-	padding-left: 0;
-	padding-right: 0;
-	border:0.02px solid #dee2e6;
-	 
+.issue .it .item{
+	border:0.02px solid #dee2e6; 
 }
-.item-img{
+.issue .it .item .item-img{
 	width:100%;
+	height:180px;
 }
-.item  .title{
+.issue .it .item  .item-title{
+	margin-top: 15px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.issue .it .item  .item-title span{
+	display: inline-block; white-space: nowrap;width: 100%; overflow: hidden; text-overflow:ellipsis;
+	font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	font-size: 18px;
+	color:#333333;
+}
+.issue .it .item  .item-content{
+	margin-bottom: 24px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.issue .it .item  .item-content span{
 	font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 	font-size: 16px;
-	color:#333333;
-	padding: 0
-
+	color: #999999;
+	display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;
 }
-.item  .content{
-	font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-	font-size: 14px;
-	color: #999999
+.issue .col-md-12{
+	margin-top: 20px;
+	padding-left: 0;
 }
-
-.readmore{
-	margin-top: 30px;
-	height: 45px;
+.issue .col-md-12 .readmore{
+	border: 1px solid #dee2e6;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
-
+.issue .col-md-12 .readmore a{
+	color:#999999;
+	text-decoration:none
+}
+.issue .col-md-12 .readmore a p{
+	margin-bottom: 0px;
+	text-align: center;
+}
+ 
+.issue .container .row .rightside{
+	padding-left: 0px;
+	padding-right: 0px;
+}
 .hotinfo{
-	background-color: #f9f9f9
+	background-color: #f9f9f9;	 
+	padding-top: 15px;
+	padding-bottom: 5px;
 }
 .hotinfo .feature-img{
 	margin-left: 20px
@@ -129,14 +135,24 @@
 	color:#333333;
 	font-size: 22px
 }
-.hotinfo a{
-	font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+ 
+.hotinfo li{
+	margin-top: 10px;
+	color: #ced4da;
+}
+.hotinfo li a{	
 	color:#666666;
-	font-size: 14px;
+	text-decoration:none;
+	font-size: 18px;
+	font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	display: inline-block; white-space: nowrap;width: 100%; overflow: hidden; text-overflow:ellipsis;vertical-align: middle;
 }
 
 .news{
-	background-color: #f9f9f9
+	margin-top: 20px;
+	background-color: #f9f9f9;
+	padding-top: 15px;
+	padding-bottom: 5px;
 }
 .news .feature-img{
 	margin-left: 20px
@@ -146,15 +162,21 @@
 	color:#333333;
 	font-size: 22px
 }
-
+.news .smalltab{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
 /* Style the tab */
 .news .smalltab .tab {
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
+    overflow: hidden;    
 }
-.news .smalltab .tab .col-md{
-	 padding:0;
+.news .smalltab .tab .fortabtitle{
+	margin-left: 0px;
+	margin-right: 0px
+}
+.news .smalltab .tab .fortabtitle .col-md{
+	padding-left: 6px;
+	padding-right: 0px
 }
 /* Style the buttons inside the tab */
 .news .smalltab .tab button {
@@ -162,49 +184,54 @@
     float: left;
     border: none;
     outline: none;
-    cursor: pointer;
-    padding-left: 18px;
-    padding-right: 18px;
+    cursor: pointer;  
     transition: 0.3s;
-    font-size: 13px;
+    font-size: 17px;
+    color: #666666;
+    padding-left: 0px;
+    padding-right: 0px
 }
-
 /* Change background color of buttons on hover */
 .news .smalltab .tab button:hover {
-    background-color: #ddd;
+ 
 }
-
 /* Create an active/current tablink class */
 .news .smalltab .tab button.active {
-    background-color: #348fe0;
+    color:#2a83d3;
 }
-
 /* Style the tab content */
 .news .smalltab .smalltabcontent {
     display: none;
-    padding: 6px 12px;
-     
+    padding: 6px 12px;   
     border-top: none;
 }
 .news .carousel-inner img {
       width: 100%;
       height: 100%;
   }
-.news .news-article a{
-	color: inherit;
-	 
+.news .news-article{
+	margin-top: 20px;
 }
 .news .news-article p {
 	margin-left: 18px;
 	font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-	font-size: 14px;
+	font-size: 18px;
 	color: #666666
 }
+.news .news-article a{
+	color: inherit;	
+	text-decoration:none;
+	display: inline-block; white-space: nowrap;width: 100%; overflow: hidden; text-overflow:ellipsis;
+}
+
 .rank{
-	background-color: #f9f9f9
+	margin-top: 20px;
+	background-color: #f9f9f9;
+	padding-top: 15px;
+	padding-bottom: 5px;
 }
 .rank .feature-img{
-	margin-left: 20px
+	margin-left: 15px
 }
 .rank span{
 	font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
@@ -212,15 +239,16 @@
 	font-size: 22px
 }
 .rank li{
-	color: #666666;
+	margin-top: 10px;
 }
-.rank a{
-	
-	color:inherit;
-	
+.rank .rank123{
+	color: #666666;
+	list-style-image:url(../static/internet/rank123.png);
 }
 .rank a span{
 	color: #666666;
+	text-decoration: none;
 	font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-	font-size: 14px;
+	font-size: 18px;
+	display: inline-block; white-space: nowrap;width: 100%; overflow: hidden; text-overflow:ellipsis;vertical-align: -26%
 }
