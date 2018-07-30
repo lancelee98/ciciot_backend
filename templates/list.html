@@ -138,7 +138,9 @@
                     </div>
                     {% if forloop.counter|divisibleby:3 %}
                         </div>
-                    {% endif %}
+                    {% elif forloop.last %}
+                        </div>
+					{% endif %}
                     {% endfor %}
 					<div class="row"> 
 		                <div class="col-md-12">                              
