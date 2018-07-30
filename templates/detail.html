@@ -1,41 +1,46 @@
 {% extends '_base.html' %}
 {% block meta_head %}
-    {{ block.super }}
-    <link href="/static/ciciot/css/details.css" rel="stylesheet">
-    <link href="/static/ciciot/css/head2.css" rel="stylesheet">
+{{ block.super }}
+<link href="/static/ciciot/css/details.css" rel="stylesheet">
+<link href="/static/ciciot/css/head2.css" rel="stylesheet">
 {% endblock %}
 
 {% block head %}
-    <section id="head">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 offset-md-1">
-                    <img src="/static/ciciot/static/journal/logo.jpg">
-                </div>
-                <div class="col-md-3">
-                    <div class="searchbox">
-                        <form action="">
-                            <input type="hidden" name="" value="全部搜索" id="select_value">
-                            <input type="text" name="" id="searchPlaceholder" class="import" placeholder="请输入查找内容">
-                            <input type="submit" value="搜   索" class="btn-search">
-                        </form>
-                    </div>
-                </div>
-                <div class="col-md-1">
-                    <div class="login"><a href="#">登陆</a>|<a href="#">注册</a></div>
+<section id="head">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-1">
+                <div class="row">
+                <img src="/static/ciciot/static/details/logo.png" width="81px" height="83px">
+                    <h5> 物联网技术与应用&nbsp|</h5>
+                    <h5>物联网学报&nbsp|</h5>
+                    <h5 class="color-blue">便捷交通</h5>
                 </div>
             </div>
+            <div class="col-md-3">
+                <div class="searchbox">
+                    <form action="">
+                        <input type="hidden" name="" value="全部搜索" id="select_value">
+                        <input type="text" name="" id="searchPlaceholder" class="import" placeholder="请输入查找内容">
+                        <input type="submit" value="搜   索" class="btn-search">
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="login"> <a href="#">登陆</a>|<a href="#">注册</a></div>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 {% endblock %}
 
 {% block content %}
-    <section id="main">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-7 offset-md-1">
-                    <div class="row">
-                        <h3>{{ article.title }}<h3>
+<section id="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 offset-md-1">
+                <div class="row">
+                    <h3>{{ article.title }}<h3>
                     </div>
                     <div class="row date">
                         <div class="col-md-3 full">
@@ -61,11 +66,11 @@
                         <div class="col-md-12 full">
                             <hr>
                         </div>
-                        <div class="col-md-3 offset-md-2 full" style="margin-top: 20px">
-                            <img src="/static/ciciot/static/details/share.png">
+                        <div class="col-md-3 offset-md-2 " style="margin-top: 20px">
+                            <a class="btn "><img src="/static/ciciot/static/details/share-it.png "alt=" " width="57px" height="20px"></a>
                         </div>
-                        <div class="col-md-3 offset-md-2 full" style="margin-top: 20px">
-                            <img src="/static/ciciot/static/details/like.png">
+                        <div class="col-md-3 offset-md-2" style="margin-top: 20px">
+                            <a id="btn1" class="btn "><img src="/static/ciciot/static/details/star-it.png "alt=" " width="55px" height="20px"></a>
                         </div>
                     </div>
                 </div>
@@ -76,12 +81,12 @@
                                 今日热点
                             </p>
                         </div>
-                        <ul>
                             {% for article in hot_articles %}
-                                <li><a class="hot" href="{% url 'article:detail' article.id %}">{{ article.title }}</a></li>
-
+                            <div class="row list">
+                                <div><img src="/static/ciciot/static/details/circle.png" width="7px" height="7px"> <a class="hot" href="{% url 'article:detail' article.id %}">{{ article.title }}</a>
+                                </div>
+                             </div>
                             {% endfor %}
-                        </ul>
                     </div>
                     <div class="row right">
                         <div class="col-md-12 side-img">
@@ -92,19 +97,38 @@
                         {% for article in recomment_articles %}
                         <div class="row advise">
                             <div class="col-md-5 right-img">
-{#                                <p><img src="/static/ciciot/static/details/pic1.png" alt=" ">#}
-                                <p><img src="{{ article.preview_picture }}" alt=" ">
+                                {#                                <p><img src="/static/ciciot/static/details/pic1.png" alt=" ">#}
+                                    <p><img src="{{ article.preview_picture }}" alt=" ">
+                                    </div>
+                                    <div class="col-md-7 right-text">
+                                        <a href="{% url 'article:detail' article.id %}" class="up">{{ article.title }}</a>
+                                        <p class="down">{{ article.pub_date | date:"Y-m-d" }}</p>
+                                    </div>
+                                </div>
+                                {% endfor %}
                             </div>
-                            <div class="col-md-7 right-text">
-                                <a href="{% url 'article:detail' article.id %}" class="up">{{ article.title }}</a>
-                                <p class="down">{{ article.pub_date | date:"Y-m-d" }}</p>
-                            </div>
-                        </div>
-                        {% endfor %}
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-{% endblock %}
+        </section>
+        {% endblock %}
+
+        {% block script %}
+        <script>
+            var i=1;
+            $("#btn1").click(function(e){
+                if(i==1){
+                    $(this).addClass("btn_change");
+                    $(this).children("img").attr("src","/static/ciciot/static/details/star-it1.png");
+                    i=i+1;
+                }
+                else if(i==2){
+                    $(this).removeClass("btn_change");
+                    $(this).children("img").attr("src","/static/ciciot/static/details/star-it.png");
+                    
+                    i=i-1;
+                }
+            })
+        </script>
+        {% endblock %}

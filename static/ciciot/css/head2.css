@@ -1,10 +1,6 @@
 #head {
     font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
-#head .row
-{
-    
-}
 #head .col-md-6{
     padding: 0px;
     margin-top: 2px;
@@ -31,7 +27,6 @@
 }
 .searchbox .import {
     width: 190px;
-    height: 15px;
     margin-left: 0px;
     margin-top: 7px;
     padding-left: 10px;
@@ -43,11 +38,6 @@
     font-size: 13px;
 }
 
-#head img{
-    margin-top: 5px ;
-    margin-bottom: 10px;
-    width: 390px;
-}
 #head a{
     text-decoration:none;
     color:black;
@@ -58,12 +48,6 @@
 }
 #head a:hover{
     color: blue;
-}
-
-*{
-    margin: 0;
-    padding: 0;
-    list-style: none;
 }
 
 .searchbox .btn-search {
@@ -77,5 +61,16 @@
     margin-right: -2px;
     font-size: 14px;
 }
-
-
+#head h5
+{
+    padding-bottom: 27px;
+    padding-top: 29px;
+    padding-left: 10px;
+    margin-bottom: 0px;
+    font-weight: 550;
+    font-size: 22px;
+}
+#head .color-blue
+{
+    color: #2a83d3;
+}
