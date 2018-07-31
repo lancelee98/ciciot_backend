@@ -4,7 +4,7 @@
     {{ block.super }}
     <link href="/static/ciciot/css/journal.css" rel="stylesheet">
     <link href="/static/ciciot/css/head.css" rel="stylesheet">
-  
+
 {% endblock %}
 {% block content %}
     <section id="context">
@@ -62,7 +62,9 @@
                         {% for article in second_articles %}
                             <div class="title">
                                 <a href="{% url 'article:detail' article.id %}"><img
-                                        src="/static/ciciot/static/journal/circle.png">{{ article.title }}<span>{{ article.pub_date | date:"Y-m-d" }}</span></a>
+                                        src="/static/ciciot/static/journal/circle.png"><span
+                                        class="article-title">{{ article.title | truncatechars:25 }}</span><span
+                                        class="article-date">{{ article.pub_date | date:"Y-m-d" }}</span></a>
                             </div>
                         {% endfor %}
                     </div>
@@ -92,7 +94,7 @@
                     <div class="col-md-10 back offset-md-1">
                         <img src="/static/ciciot/static/journal/back1.png">
                         <p class="head">往期回顾</p>
-                        <p class="footer">更多&nbsp></p>
+                        <p class="footer"><a href="/articles?category=物联网学报">更多&nbsp></a></p>
                     </div>
                     <div class="row backed">
                         {% for article in paper_articles %}
@@ -101,7 +103,7 @@
                             {% else %}
                                 <div class="col-md backd{{ forloop.counter }} ">
                             {% endif %}
-                        <img src="{{ article.preview_picture }}" alt="">
+                        <a href="{% url 'article:detail' article.id %}"><img src="{{ article.preview_picture }}" alt=""></a>
                         <div class="backd11">
                             <a href="{% url 'article:detail' article.id %}">
                                 <p>【第{{ forloop.counter }}期】{{ article.title }}</p></a>
@@ -123,219 +125,243 @@
                         <img src="/static/ciciot/static/journal/xuebao.png">
                     </div>
 
-                               <div class="col-md-2 change1 offset-md-1"><img id="img1" class="image1" src="/static/ciciot/static/journal/stab1.png"/><img id="img2" class="image2" src="/static/ciciot/static/journal/stab11.png"/><p class="p1">智慧服务终端</p></div>
-                 <div class="col-md-2 change1 "><img id="img1" class="image1" src="/static/ciciot/static/journal/stab2.png"/><img id="img2" class="image2" src="/static/ciciot/static/journal/stab22.png"/><p class="p1">智慧网络服务</p></div>
-                  <div class="col-md-2 change1 "><img id="img1" class="image1" src="/static/ciciot/static/journal/stab3.png"/><img id="img2" class="image2" src="/static/ciciot/static/journal/stab33.png"/><p class="p1">云计算</p></div>
-                   <div class="col-md-2 change1 "><img id="img1" class="image1" src="/static/ciciot/static/journal/stab4.png"/><img id="img2" class="image2" src="/static/ciciot/static/journal/stab44.png"/><p class="p1">大数据</p></div>
-                    <div class="col-md-2 change1 "><img id="img1" class="image1" src="/static/ciciot/static/journal/stab5.png"/><img id="img2" class="image2" src="/static/ciciot/static/journal/stab55.png"/><p class="p1">服务平台</p></div>
+                    <div class="col-md-2 change1 offset-md-1"><img id="img1" class="image1"
+                                                                   src="/static/ciciot/static/journal/stab1.png"/><img
+                            id="img2" class="image2" src="/static/ciciot/static/journal/stab11.png"/>
+                        <p class="p1">智慧服务终端</p></div>
+                    <div class="col-md-2 change1"><img id="img1" class="image1"
+                                                       src="/static/ciciot/static/journal/stab2.png"/><img id="img2"
+                                                                                                           class="image2"
+                                                                                                           src="/static/ciciot/static/journal/stab22.png"/>
+                        <p class="p1">智慧网络服务</p></div>
+                    <div class="col-md-2 change1 "><img id="img1" class="image1"
+                                                        src="/static/ciciot/static/journal/stab3.png"/><img id="img2"
+                                                                                                            class="image2"
+                                                                                                            src="/static/ciciot/static/journal/stab33.png"/>
+                        <p class="p1">云计算</p></div>
+                    <div class="col-md-2 change1 "><img id="img1" class="image1"
+                                                        src="/static/ciciot/static/journal/stab4.png"/><img id="img2"
+                                                                                                            class="image2"
+                                                                                                            src="/static/ciciot/static/journal/stab44.png"/>
+                        <p class="p1">大数据</p></div>
+                    <div class="col-md-2 change1 "><img id="img1" class="image1"
+                                                        src="/static/ciciot/static/journal/stab5.png"/><img id="img2"
+                                                                                                            class="image2"
+                                                                                                            src="/static/ciciot/static/journal/stab55.png"/>
+                        <p class="p1">服务平台</p></div>
                     <div class="col-md-1"></div>
- 
-
-
-
-
-
 
 
                     <section id="tech-lib">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-2 offset-md-1">
-                    <h4> <img src="/static/ciciot/static/journal/circle.png"/>&nbsp传感器</h4>
-                    <p>传感器传感器感器传感器传传感器传感器</p>
-                </div>
-                <div class="col-md-2">
-                    <h4> <img
-                        src="/static/ciciot/static/journal/circle.png">&nbsp移动互联网
-                    </h4>
-                    <p>传感器传感器传感器传感器传感器</p>
-                </div>
-                <div class="col-md-2">
-                    <h4> <img
-                        src="/static/ciciot/static/journal/circle.png">&nbsp4G
-                    </h4>
-                    <p>传感器传感器传感器传感器传感器</p>
-                </div><div class="col-md-2">
-                    <h4> <img
-                        src="/static/ciciot/static/journal/circle.png">&nbsp5G
-                    </h4>
-                    <p>传感器传感器传感器传感器传感器</p>
-                </div><div class="col-md-2">
-                    <h4> <img
-                        src="/static/ciciot/static/journal/circle.png">&nbspWIFI
-                    </h4>
-                    <p>传感器传感器传感器传感器传感器</p>
-                </div>
-            </div>   
-            <div class="row">
-                <div class="col-md-2 offset-md-1">
-                    <h4> <img src="/static/ciciot/static/journal/circle.png"/>&nbspZigbee</h4>
-                    <p>传感器传感器传感器传感器传感器</p>
-                </div>
-                <div class="col-md-2 ">
-                    <h4> <img src="/static/ciciot/static/journal/circle.png"/>&nbsp802.11b</h4>
-                    <p>传感器传感器传感器传感器传感器</p>
-                </div>
-            </div>   
-        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-2 offset-md-1">
+                                    <h4><img src="/static/ciciot/static/journal/circle.png"/>&nbsp传感器</h4>
+                                    <p>传感器传感器感器传感器传传感器传感器</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <h4><img
+                                            src="/static/ciciot/static/journal/circle.png">&nbsp可穿戴设备
+                                    </h4>
+                                    <p>传感器传感器传感器传感器传感器</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <h4><img
+                                            src="/static/ciciot/static/journal/circle.png">&nbsp智能终端控制器
+                                    </h4>
+                                    <p>传感器传感器传感器传感器传感器</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <h4><img
+                                            src="/static/ciciot/static/journal/circle.png">&nbsp智能终端服务设备
+                                    </h4>
+                                    <p>传感器传感器传感器传感器传感器</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <h4><img
+                                            src="/static/ciciot/static/journal/circle.png">&nbspWIFI
+                                    </h4>
+                                    <p>传感器传感器传感器传感器传感器</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 offset-md-1">
+                                    <h4><img src="/static/ciciot/static/journal/circle.png"/>&nbspZigbee</h4>
+                                    <p>传感器传感器传感器传感器传感器</p>
+                                </div>
+                                <div class="col-md-2 ">
+                                    <h4><img src="/static/ciciot/static/journal/circle.png"/>&nbsp802.11b</h4>
+                                    <p>传感器传感器传感器传感器传感器</p>
+                                </div>
+                            </div>
+                        </div>
 
 
-          <div class="container">
-            <div class="row">
-                <div class="col-md-2 offset-md-1">
-                    <h4> <img src="/static/ciciot/static/journal/circle.png"/>&nbsp传感器</h4>
-                    <p>传感器传感器感器传感器传传感器传感器</p>
-                </div>
-                <div class="col-md-2">
-                    <h4> <img
-                        src="/static/ciciot/static/journal/circle.png">&nbsp移动互联网
-                    </h4>
-                    <p>传感器传感器传感器传感器传感器</p>
-                </div>
-                <div class="col-md-2">
-                    <h4> <img
-                        src="/static/ciciot/static/journal/circle.png">&nbsp4G
-                    </h4>
-                    <p>传感器传感器传感器传感器传感器</p>
-                </div><div class="col-md-2">
-                    <h4> <img
-                        src="/static/ciciot/static/journal/circle.png">&nbsp5G
-                    </h4>
-                    <p>传感器传感器传感器传感器传感器</p>
-                </div><div class="col-md-2">
-                    <h4> <img
-                        src="/static/ciciot/static/journal/circle.png">&nbspWIFI
-                    </h4>
-                    <p>传感器传感器传感器传感器传感器</p>
-                </div>
-            </div>
-                         
-        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-2 offset-md-1">
+                                    <h4><img src="/static/ciciot/static/journal/circle.png"/>&nbsp传感器</h4>
+                                    <p>传感器传感器感器传感器传传感器传感器</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <h4><img
+                                            src="/static/ciciot/static/journal/circle.png">&nbsp移动互联网
+                                    </h4>
+                                    <p>传感器传感器传感器传感器传感器</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <h4><img
+                                            src="/static/ciciot/static/journal/circle.png">&nbsp4G
+                                    </h4>
+                                    <p>传感器传感器传感器传感器传感器</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <h4><img
+                                            src="/static/ciciot/static/journal/circle.png">&nbsp5G
+                                    </h4>
+                                    <p>传感器传感器传感器传感器传感器</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <h4><img
+                                            src="/static/ciciot/static/journal/circle.png">&nbspWIFI
+                                    </h4>
+                                    <p>传感器传感器传感器传感器传感器</p>
+                                </div>
+                            </div>
 
-          <div class="container">
-            <div class="row">
-                <div class="col-md-2 offset-md-1">
-                    <h4> <img src="/static/ciciot/static/journal/circle.png"/>&nbsp传感器</h4>
-                    <p>传感器传感器感器传感器传传感器传感器</p>
-                </div>
-                <div class="col-md-2">
-                    <h4> <img
-                        src="/static/ciciot/static/journal/circle.png">&nbsp移动互联网
-                    </h4>
-                    <p>传感器传感器传感器传感器传感器</p>
-                </div>
-                <div class="col-md-2">
-                    <h4> <img
-                        src="/static/ciciot/static/journal/circle.png">&nbsp4G
-                    </h4>
-                    <p>传感器传感器传感器传感器传感器</p>
-                </div><div class="col-md-2">
-                    <h4> <img
-                        src="/static/ciciot/static/journal/circle.png">&nbsp5G
-                    </h4>
-                    <p>传感器传感器传感器传感器传感器</p>
-                </div><div class="col-md-2">
-                    <h4> <img
-                        src="/static/ciciot/static/journal/circle.png">&nbspWIFI
-                    </h4>
-                    <p>传感器传感器传感器传感器传感器</p>
-                </div>
-            </div>   
-            <div class="row">
-                <div class="col-md-2 offset-md-1">
-                    <h4> <img src="/static/ciciot/static/journal/circle.png"/>&nbspZigbee</h4>
-                    <p>传感器传感器传感器传感器传感器</p>
-                </div>
-                <div class="col-md-2 ">
-                    <h4> <img src="/static/ciciot/static/journal/circle.png"/>&nbsp802.11b</h4>
-                    <p>传感器传感器传感器传感器传感器</p>
-                </div>
-            </div>   
-        </div>
-          <div class="container">
-            <div class="row">
-                <div class="col-md-2 offset-md-1">
-                    <h4> <img src="/static/ciciot/static/journal/circle.png"/>&nbsp传感器</h4>
-                    <p>传感器传感器感器传感器传传感器传感器</p>
-                </div>
-                <div class="col-md-2">
-                    <h4> <img
-                        src="/static/ciciot/static/journal/circle.png">&nbsp移动互联网
-                    </h4>
-                    <p>传感器传感器传感器传感器传感器</p>
-                </div>
-                <div class="col-md-2">
-                    <h4> <img
-                        src="/static/ciciot/static/journal/circle.png">&nbsp4G
-                    </h4>
-                    <p>传感器传感器传感器传感器传感器</p>
-                </div><div class="col-md-2">
-                    <h4> <img
-                        src="/static/ciciot/static/journal/circle.png">&nbsp5G
-                    </h4>
-                    <p>传感器传感器传感器传感器传感器</p>
-                </div><div class="col-md-2">
-                    <h4> <img
-                        src="/static/ciciot/static/journal/circle.png">&nbspWIFI
-                    </h4>
-                    <p>传感器传感器传感器传感器传感器</p>
-                </div>
-            </div>   
-            <div class="row">
-                <div class="col-md-2 offset-md-1">
-                    <h4> <img src="/static/ciciot/static/journal/circle.png"/>&nbspZigbee</h4>
-                    <p>传感器传感器传感器传感器传感器</p>
-                </div>
-                <div class="col-md-2 ">
-                    <h4> <img src="/static/ciciot/static/journal/circle.png"/>&nbsp802.11b</h4>
-                    <p>传感器传感器传感器传感器传感器</p>
-                </div>
-                 <div class="col-md-2 ">
-                    <h4> <img src="/static/ciciot/static/journal/circle.png"/>&nbsp802.11b</h4>
-                    <p>传感器传感器传感器传感器传感器</p>
-                </div>
-            </div>   
-        </div>
+                        </div>
 
-          <div class="container">
-            <div class="row">
-                <div class="col-md-2 offset-md-1">
-                    <h4> <img src="/static/ciciot/static/journal/circle.png"/>&nbsp传感器</h4>
-                    <p>传感器传感器感器传感器传传感器传感器</p>
-                </div>
-                <div class="col-md-2">
-                    <h4> <img
-                        src="/static/ciciot/static/journal/circle.png">&nbsp移动互联网
-                    </h4>
-                    <p>传感器传感器传感器传感器传感器</p>
-                </div>
-                <div class="col-md-2">
-                    <h4> <img
-                        src="/static/ciciot/static/journal/circle.png">&nbsp4G
-                    </h4>
-                    <p>传感器传感器传感器传感器传感器</p>
-                </div><div class="col-md-2">
-                    <h4> <img
-                        src="/static/ciciot/static/journal/circle.png">&nbsp5G
-                    </h4>
-                    <p>传感器传感器传感器传感器传感器</p>
-                </div><div class="col-md-2">
-                    <h4> <img
-                        src="/static/ciciot/static/journal/circle.png">&nbspWIFI
-                    </h4>
-                    <p>传感器传感器传感器传感器传感器</p>
-                </div>
-            </div>   
-            <div class="row">
-                <div class="col-md-2 offset-md-1">
-                    <h4> <img src="/static/ciciot/static/journal/circle.png"/>&nbspZigbee</h4>
-                    <p>传感器传感器传感器传感器传感器</p>
-                </div>
-               
-            </div>   
-        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-2 offset-md-1">
+                                    <h4><img src="/static/ciciot/static/journal/circle.png"/>&nbsp数据存储</h4>
+                                    <p>传感器传感器感器传感器传传感器传感器</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <h4><img
+                                            src="/static/ciciot/static/journal/circle.png">&nbsp信息处理能力
+                                    </h4>
+                                    <p>传感器传感器传感器传感器传感器</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <h4><img
+                                            src="/static/ciciot/static/journal/circle.png">&nbsp基础设施服务
+                                    </h4>
+                                    <p>传感器传感器传感器传感器传感器</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <h4><img
+                                            src="/static/ciciot/static/journal/circle.png">&nbsp平台即服务
+                                    </h4>
+                                    <p>传感器传感器传感器传感器传感器</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <h4><img
+                                            src="/static/ciciot/static/journal/circle.png">&nbsp软件即服务
+                                    </h4>
+                                    <p>传感器传感器传感器传感器传感器</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 offset-md-1">
+                                    <h4><img src="/static/ciciot/static/journal/circle.png"/>&nbsp分布式计算</h4>
+                                    <p>传感器传感器传感器传感器传感器</p>
+                                </div>
+                                <div class="col-md-2 ">
+                                    <h4><img src="/static/ciciot/static/journal/circle.png"/>&nbsp并行计算</h4>
+                                    <p>传感器传感器传感器传感器传感器</p>
+                                </div>
+                                <div class="col-md-2 ">
+                                    <h4><img src="/static/ciciot/static/journal/circle.png"/>&nbsp网格计算</h4>
+                                    <p>传感器传感器传感器传感器传感器</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <h4><img src="/static/ciciot/static/journal/circle.png"/>&nbsp实时计算</h4>
+                                    <p>传感器传感器传感器传感器传感器</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-2 offset-md-1">
+                                    <h4><img src="/static/ciciot/static/journal/circle.png"/>&nbsp大量</h4>
+                                    <p>传感器传感器感器传感器传传感器传感器</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <h4><img
+                                            src="/static/ciciot/static/journal/circle.png">&nbsp高速
+                                    </h4>
+                                    <p>传感器传感器传感器传感器传感器</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <h4><img
+                                            src="/static/ciciot/static/journal/circle.png">&nbsp多样
+                                    </h4>
+                                    <p>传感器传感器传感器传感器传感器</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <h4><img
+                                            src="/static/ciciot/static/journal/circle.png">&nbsp低价值密度
+                                    </h4>
+                                    <p>传感器传感器传感器传感器传感器</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <h4><img
+                                            src="/static/ciciot/static/journal/circle.png">&nbsp真实性
+                                    </h4>
+                                    <p>传感器传感器传感器传感器传感器</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-2 offset-md-1">
+                                    <h4><img src="/static/ciciot/static/journal/circle.png"/>&nbsp传感器</h4>
+                                    <p>传感器传感器感器传感器传传感器传感器</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <h4><img
+                                            src="/static/ciciot/static/journal/circle.png">&nbsp移动互联网
+                                    </h4>
+                                    <p>传感器传感器传感器传感器传感器</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <h4><img
+                                            src="/static/ciciot/static/journal/circle.png">&nbsp4G
+                                    </h4>
+                                    <p>传感器传感器传感器传感器传感器</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <h4><img
+                                            src="/static/ciciot/static/journal/circle.png">&nbsp5G
+                                    </h4>
+                                    <p>传感器传感器传感器传感器传感器</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <h4><img
+                                            src="/static/ciciot/static/journal/circle.png">&nbspWIFI
+                                    </h4>
+                                    <p>传感器传感器传感器传感器传感器</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 offset-md-1">
+                                    <h4><img src="/static/ciciot/static/journal/circle.png"/>&nbspZigbee</h4>
+                                    <p>传感器传感器传感器传感器传感器</p>
+                                </div>
+                                <div class="col-md-2 ">
+                                    <h4><img src="/static/ciciot/static/journal/circle.png"/>&nbsp802.11b</h4>
+                                    <p>传感器传感器传感器传感器传感器</p>
+                                </div>
+                                <div class="col-md-2 ">
+                                    <h4><img src="/static/ciciot/static/journal/circle.png"/>&nbsp802.11</h4>
+                                    <p>传感器传感器传感器传感器传感器</p>
+                                </div>
+                            </div>
+                        </div>
 
-    </section>
+
+                    </section>
 
                 </div>
             </div>
@@ -368,8 +394,10 @@
                         </div>
                         <div class="col-md-9">
                             <h4>研究型学习平台</h4>
-                            <p>博士&nbsp &nbsp|&nbsp &nbsp研究生&nbsp &nbsp |&nbsp &nbsp 本科生 &nbsp &nbsp | &nbsp &nbsp
-                                工程师</p>
+                            <p><a href="http://www.91boshi.net/" target="_blank">博士</a>&nbsp &nbsp|&nbsp &nbsp <a
+                                    href="http://yz.chsi.com.cn/" target="_blank">研究生</a>&nbsp &nbsp |&nbsp &nbsp <a
+                                    href="http://www.lw54.com/" target="_blank">本科生</a> &nbsp &nbsp | &nbsp &nbsp
+                                <a href="http://www.zcpdw.com/" target="_blank">工程师</a></p>
                         </div>
                     </div>
                 </div>
@@ -383,10 +411,18 @@
                         <div class="col-md-9">
                             <h4>协同研究平台
                             </h4>
-                            <p>高等院校&nbsp | &nbsp 地方政府 &nbsp | &nbsp 企业 | &nbsp 研究院所科研项目申报信息库 &nbsp | &nbsp 重点研究技术 &nbsp
-                                |
+                            <p><a href="http://gaokao.eol.cn/html/g/mingdan/" target="_blank">高等院校</a>&nbsp | &nbsp
+                                <a href="http://www.stats.gov.cn/tjgz/wzlj/dfzfwz/" target="_blank">地方政府</a> &nbsp |
                                 &nbsp
-                                863军民融合 &nbsp | &nbsp 经信委 &nbsp | &nbsp 发改委
+                                <a href="http://www.mixlinker.com/#B_vid=8801491600812008082" target="_blank">企业</a> |
+                                &nbsp
+                                <a href="http://ihe.xmu.edu.cn/" target="_blank">研究院所科研项目申报信息库</a> &nbsp | &nbsp
+                                <a href="http://www.htrdc.com/kjb/web/cms/www/kjb/index/" target="_blank">重点研究技术</a>
+                                &nbsp | &nbsp
+                                <a href="http://program.most.gov.cn/" target="_blank">863</a> | &nbsp <a
+                                        href="http://jmjh.miit.gov.cn/" target="_blank">军民融合</a> &nbsp | &nbsp
+                                <a href="http://www.jseic.gov.cn/index.html" target="_blank"></a>经信委 &nbsp | &nbsp
+                                <a href="http://www.ndrc.gov.cn/" target="_blank">发改委</a>
                             </p>
                         </div>
                     </div>
@@ -403,7 +439,8 @@
                         </div>
                         <div class="col-md-9">
                             <h4>出版平台</h4>
-                            <p>邮电出版社 &nbsp | &nbsp 科研统计与期刊评价
+                            <p><a href="http://www.ptpress.com.cn/" target="_blank">邮电出版社</a> &nbsp | &nbsp
+                                <a href="http://www.kygl.net.cn/CN/volumn/current.shtml" target="_blank">科研统计与期刊评价</a>
                             </p>
                         </div>
                     </div>
@@ -441,7 +478,7 @@
     <section id="platform-libary">
         <div class="container">
             <div class="row">
-                <div class="  col-md-5 offset-md-1 ">
+                <div class="  col-md-5 offset-md-1">
                     <div class="row left-card">
                         <div class="col-md-2">
                             <p><img src="/static/ciciot/static/platform-libary/item5.png" alt=" " width="46px"
@@ -451,7 +488,9 @@
                         <div class="col-md-9">
                             <h4>工业4.0
                             </h4>
-                            <p>工业终端 &nbsp | &nbsp 工业互联网&nbsp |&nbsp 工业服务平台
+                            <p><a href="http://www.advantech.com.cn/" target="_blank">工业终端</a> &nbsp | &nbsp <a
+                                    href="http://www.aii-alliance.org/" target="_blank">工业互联网</a>&nbsp |&nbsp <a
+                                    href="http://www.uiwin.cn/" target="_blank">工业服务平台</a>
                             </p>
                         </div>
                     </div>
@@ -466,10 +505,21 @@
                         <div class="col-md-9">
                             <h4>智慧系列
                             </h4>
-                            <p>智慧城市 &nbsp | &nbsp 智慧农业 &nbsp | &nbsp 智慧制造 &nbsp | &nbsp 智慧节能环保 &nbsp | &nbsp 智慧交通 &nbsp
+                            <p><a href="http://www.smartjs.cn/">智慧城市</a> &nbsp | &nbsp <a
+                                    href="http://www.int-agri.com/">智慧农业</a> &nbsp | &nbsp
+                                <a href="http://www.amadata.net.cn/">智慧制造</a> &nbsp | &nbsp <a
+                                        href="http://www.zhjn.org/">智慧节能环保</a> &nbsp | &nbsp
+                                <a href="http://www.tranbbs.com/">智慧交通</a> &nbsp
                                 |
-                                &nbsp 智慧能源 &nbsp| 智慧医疗 &nbsp|
-                                &nbsp智慧家居 &nbsp | &nbsp 智慧安防 &nbsp | &nbsp 智慧旅游 &nbsp| &nbsp 智慧国防
+                                &nbsp <a href="http://www.ioe1888.com/" target="_blank">智慧能源</a> &nbsp| <a href="#"
+                                                                                                           target="_blank">智慧医疗</a>
+                                &nbsp|
+                                &nbsp <a href="#" target="_blank">智慧家居</a> &nbsp | &nbsp <a
+                                        href="http://www.afzhan.com/channel/t3131/index.html" target="_blank">智慧安防</a>
+                                &nbsp | &nbsp
+                                <a href="http://tour.jschina.com.cn/lyzx/201802/t20180205_1398055.shtml"
+                                   target="_blank">智慧旅游</a> &nbsp| &nbsp
+                                <a href="http://www.81.cn/gfbmap/content/2015-12/24/content_133180.htm" target="_blank">智慧国防</a>
                             </p>
                         </div>
                     </div>
@@ -497,7 +547,7 @@
                                     <div class="col-md backd{{ forloop.counter }}">
                                 {% endif %}
                             {% endif %}
-                        <img src="{{  article.preview_picture }}">
+                        <a href="{% url 'article:detail' article.id %}"><img src="{{ article.preview_picture }}" alt=""></a>
                         <div class="backd11">
                             <a href="{% url 'article:detail' article.id %}"><p>{{ article.title }}</p></a>
                         </div>
@@ -517,6 +567,7 @@
                 <div class="row">
                     <div class="col-md-10 xuebao offset-md-1"><p>大咖视点</p>
                         <img src="/static/ciciot/static/journal/xuebao.png">
+                        <p class="read-more"><a href="/articles?category=大咖视点">更多&nbsp></a></p>
                     </div>
                     <div class="row backed">
                         {% for article in boss_articles %}
@@ -529,7 +580,7 @@
                                     <div class="col-md backd{{ forloop.counter }}">
                                 {% endif %}
                             {% endif %}
-                        <img src="{{  article.preview_picture }}" alt="">
+                        <a href="{% url 'article:detail' article.id %}"><img src="{{ article.preview_picture }}" alt=""></a>
                         <div class="backd11">
                             <a href="{% url 'article:detail' article.id %}"><p>{{ article.title }}</p></a>
                         </div>
@@ -547,18 +598,17 @@
 {% endblock %}
 
 {% block script %}
-    
+
     <script>
-           $(document).ready(function(){
-  $(".change1").click();
-});
-    $(".change1").click(function(){
-        var i =$(this).index();
-        $(this).addClass("change").siblings().removeClass("change");
-        $(this).children(".image1").hide().parent().siblings().children(".image1").show();
-        $(this).children("p").addClass("p11").parent().siblings().children("p").removeClass("p11");
-        $('#tech-lib .container').eq(i-1).show().siblings().hide();
-        alert(("#").index());
-     });
+        $(document).ready(function () {
+            $(".change1")[0].click();
+        });
+        $(".change1").click(function () {
+            var i = $(this).index();
+            $(this).addClass("change").siblings().removeClass("change");
+            $(this).children(".image1").hide().parent().siblings().children(".image1").show();
+            $(this).children("p").addClass("p11").parent().siblings().children("p").removeClass("p11");
+            $('#tech-lib .container').eq(i - 1).show().siblings().hide();
+        });
     </script>
 {% endblock %}
