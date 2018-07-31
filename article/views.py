@@ -30,8 +30,10 @@ class DetailView(View):
     template_name = 'detail.html'
 
     def get(self, request, pk):
+        article = get_object_or_404(Article, is_public=True, pk=pk)
         context = {
-            'article': get_object_or_404(Article, is_public=True, pk=pk),
+            'article': article,
+	    'category': article.categorise.first().name,
             'hot_articles': get_hot_articles(6),
             'recomment_articles': Article.objects.filter(is_public=True)[:5],
         }

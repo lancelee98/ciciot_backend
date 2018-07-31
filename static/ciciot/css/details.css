@@ -31,13 +31,7 @@ body
 {
     padding: 0px;
 }
-.text-intent p
-{
-    font-size:16px;
-    color: #333333;
-    text-indent: 2em;
-    margin: 10px 0 10px;
-}
+
 .right
 {
     background-color: #fafafa;
@@ -74,7 +68,7 @@ body
 {
     display: inline-block; 
 	white-space: nowrap;
-	width: 55%; 
+	width: 95%; 
 	overflow: hidden; 
 	text-overflow:ellipsis;
     font-size: 16px; 
@@ -120,7 +114,7 @@ ul li
     margin-top: 25px;
     margin-bottom: 35px;
 }
-#hr hr
+#head hr
 {
     margin-top: 0px;
     margin-bottom: 40px;
@@ -160,6 +154,11 @@ ul li
 
   .list
   {
-      padding-left: 30px;
+      padding-left: 15px;
       padding-bottom: 5px;
+  }
+  .modal-header
+  {
+      padding-bottom: 5px;
+      padding-top: 5px;
   }
