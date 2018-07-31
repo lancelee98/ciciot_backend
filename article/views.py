@@ -18,6 +18,7 @@ class IndexView(View):
 
     def get(self, request):
         context = {
+            'page_title': '物联网技术与应用|物联网学报',
             'second_articles': Article.objects.filter(is_public=True)[:6],
             'paper_articles': fetch_category_articles('物联网学报', 3),
             'session_articles': fetch_category_articles('会展', 4),
@@ -32,8 +33,9 @@ class DetailView(View):
     def get(self, request, pk):
         article = get_object_or_404(Article, is_public=True, pk=pk)
         context = {
+            'page_title': '{} - 物联网技术与应用'.format(article.title),
             'article': article,
-	    'category': article.categorise.first().name,
+            'category': article.categorise.first().name,
             'hot_articles': get_hot_articles(6),
             'recomment_articles': Article.objects.filter(is_public=True)[:5],
         }
@@ -65,6 +67,7 @@ class ListView(View):
             return ret
 
         context = {
+            'page_title': '{} - 物联网技术与应用'.format(category.name),
             'articles': articles,
             'hot_articles': get_hot_articles(6),
             'news_articles': Article.objects.filter(is_public=True)[:4],
