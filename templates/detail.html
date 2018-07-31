@@ -11,10 +11,10 @@
         <div class="row">
             <div class="col-md-6 offset-md-1">
                 <div class="row">
-                <img src="/static/ciciot/static/details/logo.png" width="91px" height="83px" style="padding-left: 10px">
+                    <a href="/"><img src="/static/ciciot/static/details/logo.png" width="91px" height="83px" style="padding-left: 10px"></a>
                     <h5> 物联网技术与应用&nbsp|</h5>
                     <h5>物联网学报&nbsp|</h5>
-                    <h5 class="color-blue">{{ category }}</h5>
+                    <a href="/articles?category={{ category }}"><h5 class="color-blue">{{ category }}</h5></a>
                 </div>
             </div>
             <div class="col-md-3">
@@ -31,11 +31,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12">
             <hr>
-        </div>
-    </div>
 </section>
 {% endblock %}
 
