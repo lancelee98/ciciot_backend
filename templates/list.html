@@ -8,95 +8,95 @@
 {% endblock %}
 {% block content %}
 
- <div class="pageall">
-    <div class="container">
-        <div class="row">
-            <div class="col-md offset-md-1 linefirst">
-                <a href="#"><p>首页</p></a>
-            </div>
-            <div class="col-md">
-                <a href="#"><p>新闻动态</p></a>
-            </div>
-            <div class="col-md">
-                <a href="#"><p>热点资讯</p></a>
-            </div>
-            <div class="col-md">
-                <a href="#"><p>协同制造</p></a>
-            </div>
-            <div class="col-md">
-                <a href="#"><p>智能终端</p></a>
-            </div>
-            <div class="col-md">
-                <a href="#"><p>可穿戴</p></a>
-            </div>
-            <div class="col-md">
-                <a href="#"><p>示范</p></a>
-            </div>
-            <div class="col-md">
-                <a href="#"><p>专题</p></a>
-            </div>
-            <div class="col-md linelast">
-                <a href="#"><p>教育</p></a>
-            </div>
-			<div class="col-md-1">
-			</div>
+    <div class="pageall">
+        <div class="container">
+            <div class="row">
+                <div class="col-md offset-md-1 linefirst">
+                    <a href="#"><p>首页</p></a>
+                </div>
+                <div class="col-md">
+                    <a href="#"><p>新闻动态</p></a>
+                </div>
+                <div class="col-md">
+                    <a href="#"><p>热点资讯</p></a>
+                </div>
+                <div class="col-md">
+                    <a href="#"><p>协同制造</p></a>
+                </div>
+                <div class="col-md">
+                    <a href="#"><p>智能终端</p></a>
+                </div>
+                <div class="col-md">
+                    <a href="#"><p>可穿戴</p></a>
+                </div>
+                <div class="col-md">
+                    <a href="#"><p>示范</p></a>
+                </div>
+                <div class="col-md">
+                    <a href="#"><p>专题</p></a>
+                </div>
+                <div class="col-md linelast">
+                    <a href="#"><p>教育</p></a>
+                </div>
+                <div class="col-md-1">
+                </div>
 
-        </div>
-        <div class="row">
-            <div class="col-md offset-md-1 linefirst">
-                <a href="#"><p>人物</p></a>
             </div>
-            <div class="col-md">
-                <a href="#"><p>前沿科技</p></a>
+            <div class="row">
+                <div class="col-md offset-md-1 linefirst">
+                    <a href="#"><p>人物</p></a>
+                </div>
+                <div class="col-md">
+                    <a href="#"><p>前沿科技</p></a>
+                </div>
+                <div class="col-md currentpage">
+                    <a href="internet.html"><p>互联网+</p></a>
+                </div>
+                <div class="col-md">
+                    <a href="#"><p>智慧城市</p></a>
+                </div>
+                <div class="col-md">
+                    <a href="#"><p>信息平台</p></a>
+                </div>
+                <div class="col-md">
+                    <a href="#"><p>网页修改</p></a>
+                </div>
+                <div class="col-md">
+                    <a href="#"><p>众创</p></a>
+                </div>
+                <div class="col-md">
+                    <a href="#"><p>论坛</p></a>
+                </div>
+                <div class="col-md linelast">
+                    <a href="#"><p>学报</p></a>
+                </div>
+                <div class="col-md-1">
+                </div>
             </div>
-            <div class="col-md currentpage">
-                <a href="internet.html"><p>互联网+</p></a>
-            </div>
-            <div class="col-md">
-                <a href="#"><p>智慧城市</p></a>
-            </div>
-            <div class="col-md">
-                <a href="#"><p>信息平台</p></a>
-            </div>
-            <div class="col-md">
-                <a href="#"><p>网页修改</p></a>
-            </div>
-            <div class="col-md">
-                <a href="#"><p>众创</p></a>
-            </div>
-            <div class="col-md">
-                <a href="#"><p>论坛</p></a>
-            </div>
-            <div class="col-md linelast">
-                <a href="#"><p>学报</p></a>
-            </div>
-			<div class="col-md-1">
-			</div>
         </div>
     </div>
-</div>
 
-<div class="downlink">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 offset-md-1">
-                 
+    <div class="downlink">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+
                     <div class="row">
                         <div class="col-md now">
-                              <a href="#"><p>智慧农业</p></a>
+                            <a href="#"><p>{{ current_category }}</p></a>
                         </div>
                         <div class="col-md">
-                              <a href="#"><p>现代农业</p></a>
+                            <a href="/articles?category={{ next_category }}"><p>{{ next_category }}</p></a>
                         </div>
                         <div class="col-md">
-                              <a href="#"><p>便捷交通</p></a>
+                            <a href="/articles?category={{ next_category }}"><p>{{ next_next_category }}</p></a>
                         </div>
                     </div>
-                
+
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
 
@@ -116,126 +116,130 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-10 offset-md-1">
-					<div class="row">
-		                    <div class="col-md-9 leftside">
-                    {% for article in articles %}
-                        {% if forloop.counter == 1 %}
-                            <div class="row i">
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:4 %}
-                            <div class="row i">
-                        {% endif %}
-                    <div class="col-md-4 it">
-                        <div class="item">
-                            <img class="item-img" src="{{ article.preview_picture }}" alt="item-img">
-                            <div class="item-title">
-                                <a href="{% url 'article:detail' article.id %}"><span>{{ article.title }}</span></a>
+                    <div class="row">
+                        <div class="col-md-9 leftside">
+                            {% for article in articles %}
+                                {% if forloop.counter == 1 %}
+                                    <div class="row i">
+                                {% endif %}
+                            {% if forloop.counter|divisibleby:4 %}
+                                <div class="row i">
+                            {% endif %}
+                            <div class="col-md-4 it">
+                                <div class="item">
+                                    <img class="item-img" src="{{ article.preview_picture }}" alt="item-img">
+                                    <div class="item-title">
+                                        <a href="{% url 'article:detail' article.id %}"><span>{{ article.title }}</span></a>
+                                    </div>
+                                    <div class="item-content">
+                                        <span>{{ article.headline }}</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="item-content">
-                                <span>{{ article.headline }}</span>
+                            {% if forloop.counter|divisibleby:3 %}
+                                </div>
+                            {% elif forloop.last %}
+                                </div>
+                            {% endif %}
+                            {% endfor %}
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="readmore">
+                                        <a href="#"><p>点击查看更多</p></a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    {% if forloop.counter|divisibleby:3 %}
-                        </div>
-                    {% elif forloop.last %}
-                        </div>
-					{% endif %}
-                    {% endfor %}
-					<div class="row"> 
-		                <div class="col-md-12">                              
-							<div class="readmore">
-								<a href="#"><p>点击查看更多</p></a>
-							</div>
-		                </div>
-		                </div> 
-                    </div>
 
 
-					  <div class="col-md-3 rightside"> 
-                        <div class="hotinfo">
-                            <img class="feature-img" src="/static/ciciot/static/internet/hotinfo.png" alt="热门资讯">
-                            <span>热门资讯</span>
-                            <ul>
-                                {% for article in articles %}
-                                    <li><a href="{% url 'article:detail' article.id %}">{{ article.title }}</a></li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                        <div class="news">
-                            <img class="feature-img" src="/static/ciciot/static/internet/news.png" alt="新闻专题">
-                            <span>新闻专题</span>
-                            <div class="smalltab">
-                                <div class="tab">
-                                    <div class="row fortabtitle">
-                                        <div class="col-md tabtitle1">
-                                            <button class="smalltablinks" onclick="openTabSmall(event, 'smallcontent1')"
-                                                    id="defaultOpenSmall">新闻动态
-                                            </button>
+                        <div class="col-md-3 rightside">
+                            <div class="hotinfo">
+                                <img class="feature-img" src="/static/ciciot/static/internet/hotinfo.png" alt="热门资讯">
+                                <span>热门资讯</span>
+                                <ul>
+                                    {% for article in articles %}
+                                        <li><a href="{% url 'article:detail' article.id %}">{{ article.title }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            <div class="news">
+                                <img class="feature-img" src="/static/ciciot/static/internet/news.png" alt="新闻专题">
+                                <span>新闻专题</span>
+                                <div class="smalltab">
+                                    <div class="tab">
+                                        <div class="row fortabtitle">
+                                            <div class="col-md tabtitle1">
+                                                <button class="smalltablinks"
+                                                        onclick="openTabSmall(event, 'smallcontent1')"
+                                                        id="defaultOpenSmall">新闻动态
+                                                </button>
+                                            </div>
+                                            <div class="col-md tabtitle2">
+                                                <button class="smalltablinks"
+                                                        onclick="openTabSmall(event, 'smallcontent2')">前沿科技
+                                                </button>
+                                            </div>
+                                            <div class="col-md tabtitle">
+                                                <button class="smalltablinks"
+                                                        onclick="openTabSmall(event, 'smallcontent3')">网络科技
+                                                </button>
+                                            </div>
                                         </div>
-                                        <div class="col-md tabtitle2">
-                                            <button class="smalltablinks"
-                                                    onclick="openTabSmall(event, 'smallcontent2')">前沿科技
-                                            </button>
-                                        </div>
-                                        <div class="col-md tabtitle">
-                                            <button class="smalltablinks"
-                                                    onclick="openTabSmall(event, 'smallcontent3')">网络科技
-                                            </button>
-                                        </div>
+                                    </div>
+
+                                </div>
+                                <div id="smallcontent1" class="smalltabcontent">
+
+                                    {% include '_slidesharesmall.html' with picture_url="/static/ciciot/static/internet/newspic.png" %}
+
+                                    <div class="news-article">
+                                        {% for article in news_articles %}
+                                            <p><a href="{% url 'article:detail' article.id %}">{{ article.title }}</a>
+                                            </p>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+
+                                <div id="smallcontent2" class="smalltabcontent">
+                                    {% include '_slidesharesmall.html' with picture_url="/static/ciciot/static/internet/newspic.png" %}
+
+                                    <div class="news-article">
+                                        {% for article in tech_articles %}
+                                            <p><a href="{% url 'article:detail' article.id %}">{{ article.title }}</a>
+                                            </p>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+
+                                <div id="smallcontent3" class="smalltabcontent">
+                                    {% include '_slidesharesmall.html' with picture_url="/static/ciciot/static/internet/newspic.png" %}
+
+                                    <div class="news-article">
+                                        {% for article in net_articles %}
+                                            <p><a href="{% url 'article:detail' article.id %}">{{ article.title }}</a>
+                                            </p>
+                                        {% endfor %}
                                     </div>
                                 </div>
 
                             </div>
-                            <div id="smallcontent1" class="smalltabcontent">
-
-                                {% include '_slidesharesmall.html' with picture_url="/static/ciciot/static/internet/newspic.png" %}
-
-                                <div class="news-article">
-                                    {% for article in news_articles %}
-                                        <p><a href="{% url 'article:detail' article.id %}">{{ article.title }}</a></p>
+                            <div class="rank">
+                                <img class="feature-img" src="/static/ciciot/static/internet/rank.png" alt="热门排行">
+                                <span>热门排行</span>
+                                <ol>
+                                    {% for article in articles %}
+                                        {% if forloop.counter <= 3 %}
+                                            <li class="rank123">
+                                                {% else %}
+                                            <li>
+                                        {% endif %}
+                                    <a href="{% url 'article:detail' article.id %}"><span>{{ article.title }}</span></a>
+                                    </li>
                                     {% endfor %}
-                                </div>
+                                </ol>
                             </div>
-
-                            <div id="smallcontent2" class="smalltabcontent">
-                                {% include '_slidesharesmall.html' with picture_url="/static/ciciot/static/internet/newspic.png" %}
-
-                                <div class="news-article">
-                                    {% for article in tech_articles %}
-                                        <p><a href="{% url 'article:detail' article.id %}">{{ article.title }}</a></p>
-                                    {% endfor %}
-                                </div>
-                            </div>
-
-                            <div id="smallcontent3" class="smalltabcontent">
-                                {% include '_slidesharesmall.html' with picture_url="/static/ciciot/static/internet/newspic.png" %}
-
-                                <div class="news-article">
-                                    {% for article in net_articles %}
-                                        <p><a href="{% url 'article:detail' article.id %}">{{ article.title }}</a></p>
-                                    {% endfor %}
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="rank">
-                            <img class="feature-img" src="/static/ciciot/static/internet/rank.png" alt="热门排行">
-                            <span>热门排行</span>
-                            <ol>
-                                {% for article in articles %}
-									{% if forloop.counter <= 3 %}
-                                    <li class="rank123">
-                                    {% else %}
-									<li>
-									{% endif %}
-									<a href="{% url 'article:detail' article.id %}"><span>{{ article.title }}</span></a>
-									</li>
-                                {% endfor %}
-                            </ol>
                         </div>
                     </div>
-					</div>
 
                 </div>
 
@@ -244,27 +248,27 @@
         </div>
 
     </div>
- 
+
 {% endblock %}
 
 {% block script %}
     <script type="text/javascript" src="/static/ciciot/js/head.js"></script>
-  <script>
-    function openTabSmall(evt, smallTabName) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("smalltabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
+    <script>
+        function openTabSmall(evt, smallTabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("smalltabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("smalltablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(smallTabName).style.display = "block";
+            evt.currentTarget.className += " active";
         }
-        tablinks = document.getElementsByClassName("smalltablinks");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-        document.getElementById(smallTabName).style.display = "block";
-        evt.currentTarget.className += " active";
-    }
-     
-    // Get the element with id="defaultOpen" and click on it
-    document.getElementById("defaultOpenSmall").click();
-</script>
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpenSmall").click();
+    </script>
 {% endblock %}
