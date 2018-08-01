@@ -11,7 +11,6 @@ body
     font-size:14px;
     color:#999999;
     margin: 0px;
-
 }
 .end
 {
@@ -31,7 +30,13 @@ body
 {
     padding: 0px;
 }
-
+.text-intent p
+{
+    font-size:16px;
+    color: #333333;
+    text-indent: 2em;
+    margin: 10px 0 10px;
+}
 .right
 {
     background-color: #fafafa;
@@ -55,7 +60,7 @@ body
 {
     display: inline-block; 
 	white-space: nowrap;
-	width: 125px; 
+	width: 90px; 
 	overflow: hidden; 
 	text-overflow:ellipsis;
     font-size: 14px; 
@@ -70,7 +75,8 @@ body
 	white-space: nowrap;
 	width: 95%; 
 	overflow: hidden; 
-	text-overflow:ellipsis;
+    text-overflow:ellipsis;
+    vertical-align: -30%;
     font-size: 16px; 
     line-height: 16px;
     margin: 0px;
@@ -119,11 +125,15 @@ ul li
     margin-top: 0px;
     margin-bottom: 40px;
 }
+
 .btn img
   {
      margin-right: 5px;
   }
-
+  :focus
+  {
+      outline: none;
+  }
 .btn {
     background-color:white;
     border: 1px solid #dedede; 
@@ -147,11 +157,13 @@ ul li
     box-shadow: 0 0px 10px 0 rgba(0,0,0,0.24),0 2px 20px 0 rgba(0,0,0,0.19);
     transform: translateY(2px);
   }
-
-  .btn_change{
+  a:not([href]):not([tabindex])
+  {
+      color: #838383;
+  }
+  .butt11{
     border: 1px solid red; 
   }
-
   .list
   {
       padding-left: 15px;
@@ -161,6 +173,73 @@ ul li
   {
       padding-bottom: 5px;
       padding-top: 5px;
-      padding-left: 30px;
-      padding-bottom: 5px;
   }
+
+@media only screen and (max-width: 635px) {
+    .full p {
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+    h3
+    {
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+    .full img
+    {
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    
+    .laptop
+    {
+        display: none;
+    }
+    #main h3 
+    {
+        padding-bottom: 0px;
+    }
+    .up
+    {
+        width: 90px;
+    }
+    
+}
+@media only screen and (min-width: 1200px) {
+    
+    .mobile
+    {
+        display: none;
+    }
+    .up
+    {
+        width: 125px;
+    }
+    
+    
+}
+@media only screen and (max-width: 768px) {
+    .side
+    {
+        display: none;
+    }
+    #head 
+    {
+        padding-left: 2%;
+    }
+    .col-md-7 .mobile
+    {
+        display:none;
+    }
+    .col-md-7 .laptop
+    {
+        display: inherit;
+    }
+    .end
+    {
+        text-align: left;
+    }
+    
+}

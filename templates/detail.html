@@ -8,7 +8,7 @@
 {% block head %}
 <section id="head">
     <div class="container">
-        <div class="row">
+        <div class="row laptop">
             <div class="col-md-6 offset-md-1">
                 <div class="row">
                     <a href="/"><img src="/static/ciciot/static/details/logo.png" width="91px" height="83px" style="padding-left: 10px"></a>
@@ -30,6 +30,24 @@
                 <div class="login"> <a href="#">登陆</a>|<a href="#">注册</a></div>
             </div>
         </div>
+        <div class="row mobile">
+            <div class=" col-md-6 offset-md-1">
+                <div class="row">
+                    <img src="/static/ciciot/static/details/logo.png" width="91px" height="83px" style="padding-left: 10px;">
+                    <p><h5> 物联网技术与应用&nbsp</h5>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="searchbox">
+                        <form action="">
+                            <input type="hidden" name="" value="全部搜索" id="select_value">
+                            <input type="text" name="" id="searchPlaceholder" class="import" placeholder="请输入查找内容">
+                            <input type="submit" value="搜   索" class="btn-search">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
             <hr>
 </section>
@@ -40,10 +58,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-7 offset-md-1">
-                <div class="row">
+                <div class="row ">
                     <h3>{{ article.title }}<h3>
                     </div>
-                    <div class="row date">
+                    <div class="row date laptop">
                         <div class="col-md-3 full">
                             <p>2018-04-16 16:31</p>
                         </div>
@@ -57,6 +75,23 @@
                             <p class="end">点赞：1340</p>
                         </div>
                         <div class="col-md-12 full">
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="row date mobile">
+                        <div class="col-md-6 full">
+                            <p>2018-04-16 16:31</p>
+                        </div>
+                        <div class="col-md-6 full">
+                            <p class="end">浏览：3241</p>
+                        </div>
+                        <div class="col-md-6 full">
+                            <p>来源：{{ article.author.name }}</p>
+                        </div>
+                        <div class="col-md-6 full">
+                            <p class="end">点赞：1340</p>
+                        </div>
+                        <div class="col-md-6 full">
                             <hr>
                         </div>
                     </div>
@@ -84,9 +119,6 @@
                         </div>
                             {% for article in hot_articles %}
                             <div class="row list hot">
-=======
-                            <div class="row list">
->>>>>>> update detail page style
                                 <div><img src="/static/ciciot/static/details/circle.png" width="7px" height="7px"> <a class="hot" href="{% url 'article:detail' article.id %}">{{ article.title }}</a>
                                 </div>
                              </div>
@@ -167,3 +199,4 @@
             window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{"bdSize":16},"image":{"viewList":["weixin","tsina","sqq","qzone","linkedin","fbook","twi","copy"],"viewText":"","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["weixin","tsina","sqq","qzone","linkedin","fbook","twi","copy"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
         {% endblock %}
+
