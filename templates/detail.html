@@ -84,6 +84,9 @@
                         </div>
                             {% for article in hot_articles %}
                             <div class="row list hot">
+=======
+                            <div class="row list">
+>>>>>>> update detail page style
                                 <div><img src="/static/ciciot/static/details/circle.png" width="7px" height="7px"> <a class="hot" href="{% url 'article:detail' article.id %}">{{ article.title }}</a>
                                 </div>
                              </div>
